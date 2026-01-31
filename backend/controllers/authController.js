@@ -1,6 +1,6 @@
 const User = require('../models/User');
 const { sendTokenResponse } = require('../config/jwt');
-const { sendWelcomeEmail } = require('../utils/emailService');
+// const { sendWelcomeEmail } = require('../utils/emailService');
 const { asyncHandler } = require('../middleware/errorHandler');
 
 // @desc    Register user
@@ -29,11 +29,11 @@ exports.register = asyncHandler(async (req, res) => {
   });
 
   // Send welcome email
-  try {
-    await sendWelcomeEmail(user);
-  } catch (error) {
-    console.error('Failed to send welcome email:', error);
-  }
+  // try {
+  //   await sendWelcomeEmail(user);
+  // } catch (error) {
+  //   console.error('Failed to send welcome email:', error);
+  // }
 
   // Send token response
   sendTokenResponse(user, 201, res);

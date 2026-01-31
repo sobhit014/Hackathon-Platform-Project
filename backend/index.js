@@ -23,7 +23,7 @@ const app = express();
 
 // Security middleware
 app.use(helmet());
-app.use(mongoSanitize());
+//app.use(mongoSanitize());
 
 // CORS
 app.use(cors({
